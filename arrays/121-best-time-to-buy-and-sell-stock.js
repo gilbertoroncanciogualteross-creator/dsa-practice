@@ -8,8 +8,11 @@
  * Complejidad temporal:
  * Complejidad espacial:
  */
+
 function maxProfit(prices) {
 
+    // Phase A
+    /*
         let max = 0;
 
         for(let i=0; i<prices.length; i++){
@@ -20,9 +23,24 @@ function maxProfit(prices) {
             }
         }
             return max; 
-    // Fase B: un solo recorrido (O(n))
+    */
+
+    // Phase B
+    let minimoCercano =  prices[0];
+    let maximoBeneficio = 0;
+
+    for(let i=1; i<prices.length; i++){
+        if(minimoCercano > prices[i]){
+            minimoCercano = prices[i];
+        }
+        if(prices[i] - minimoCercano > maximoBeneficio){
+            maximoBeneficio = prices[i] - minimoCercano;
+        }
     }
+    return maximoBeneficio;
+}
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
 console.log(maxProfit([7, 6, 4, 3, 1]));    // 0
 console.log(maxProfit([2, 4, 1]));          // 2
+
