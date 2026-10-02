@@ -1,13 +1,18 @@
-/**
- * Contains Duplicate
- * Dado un array de enteros, devuelve true si algún valor aparece
- * al menos dos veces, y false si todos son distintos.
- *
- * Complejidad temporal:
- * Complejidad espacial:
- */
+
+// 217. Contains Duplicate
+//
+// Given an array of integers, return true if any value appears
+// at least twice, and false if every element is distinct.
+//
+// Example 1: [1, 2, 3, 1] -> true
+// Example 2: [1, 2, 3, 4] -> false
+//
+// Phase A (brute force, two nested loops): Time O(n2) | Space O(1)
+// Phase B (Set, single pass):              Time O(n) | Space O(n)
+
 function containsDuplicate(nums) {
-    /* Fase A */
+
+    // Phase A
 
     /*
     for(let i = 0; i < nums.length; i++){
@@ -20,6 +25,8 @@ function containsDuplicate(nums) {
     return false;
 }
     */
+
+    // Phase B
 
     const s = new Set();
 

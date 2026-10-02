@@ -11,7 +11,8 @@
 
 function maxProfit(prices) {
 
-    // Phase A
+    // Phase A (brute force, two nested loops): Time O(2n) | Space O(n2)
+
     /*
         let max = 0;
 
@@ -25,22 +26,18 @@ function maxProfit(prices) {
             return max; 
     */
 
-    // Phase B
-    let minimoCercano =  prices[0];
-    let maximoBeneficio = 0;
+    // Phase B (single pass): Time O(n) | Space O(1)
+
+    let nearbyMin =  prices[0];
+    let maximumBenefit = 0;
 
     for(let i=1; i<prices.length; i++){
-        if(minimoCercano > prices[i]){
-            minimoCercano = prices[i];
+        if(nearbyMin > prices[i]){
+            nearbyMin = prices[i];
         }
-        if(prices[i] - minimoCercano > maximoBeneficio){
-            maximoBeneficio = prices[i] - minimoCercano;
+        else if(prices[i] - nearbyMin > maximumBenefit){
+            maximumBenefit = prices[i] - nearbyMin;
         }
     }
-    return maximoBeneficio;
+    return maximumBenefit;
 }
-
-console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
-console.log(maxProfit([7, 6, 4, 3, 1]));    // 0
-console.log(maxProfit([2, 4, 1]));          // 2
-
