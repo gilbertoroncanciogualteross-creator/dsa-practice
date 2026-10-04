@@ -15,6 +15,8 @@ This repo is for solving DSA problems. I practice DSA to build a solid foundatio
 | 121 | Best Time to Buy and Sell Stock | Arrays |
 | 1480 | Running Sum of 1d Array | Arrays |
 | 217 | Contains Duplicate | Arrays |
+| 344 | Reverse String | Strings |
+| 125 | Valid Palindrome | Strings |
 
 ## Run a solution
 
