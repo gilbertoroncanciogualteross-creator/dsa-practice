@@ -8,21 +8,31 @@
 // Example 3: [3, 1, 2, 10, 1] -> [3, 4, 6, 16, 17]
 //
 // Phase A (brute force): Time O(n2) | Space O(n)
-// Phase B (optimized):   Time O(?) | Space O(?)
-
+// Phase B (optimized):   Time O(n) | Space O(n)
+ 
 function runningSum(nums) {
-
-    // Phase A
 
     const nums2 = [];
     let sum = 0;
 
+    // Phase A
+
+    /*
     for(let i=0; i<nums.length; i++){
         sum = 0;
         for(let j=0; j<=i; j++){
             sum += nums[j];
             nums2[i] = sum;
         }
+    }
+    return nums2;
+    */
+
+    // Phase B
+    
+    for(let i=0; i<nums.length; i++){
+        sum += nums[i];
+        nums2[i] = sum;
     }
     return nums2;
 }
